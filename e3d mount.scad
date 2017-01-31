@@ -13,17 +13,17 @@ replacing the included x carriage with your own.
 
 //CHANGE THIS TO 1 TO COMPILE FOR PRINTING
 print=0;
-$fn=32;
-plate_thickness=6;
-upright_thickness=5;
-offset=5; //moves the motor left and right for different sized drive wheels
-x=18.5-4;
-y=35;
-y2=31;
-plate_height=43;
+$fn=32;             //just makes all the holes round, or not
+plate_thickness=6; //base plate thickness, 4mm is useless (I tested, so much flex)
+upright_thickness=5; //much beyond 5 and you risk the motor shaft being too short, this part is better off being aluminium.
+offset=5;   //moves the motor left and right for different sized drive wheels (not actually shaft diameter, I more or less eyeballed this)
+x=18.5-4;   //this doesn't need to be a variable, why did I do this?
+y=35;       //or this?
+y2=31;      //and THIS?
+plate_height=43; //can be made taller if you want room on top for mounting holes for PCB's, fans, zip ties, lights, etc. (nema motor mounting plate)
 filament_hole_size = 17; //size of the hole in the base plate, NOT the size of your filament
 bowden_tube_dia=4.5; //diameter of the PTFE liner in the e3d
-bodge_for_upright = 4 - upright_thickness;
+bodge_for_upright = 4 - upright_thickness; //quick fix for upright plate offset
 
 module extras(){
     %color("red")translate([0,5,-100])cylinder(d=1.75,h=200); //filament for reference
@@ -56,7 +56,7 @@ module extras(){
     //%color("orange")translate([18.5,-28+5.5,plate_thickness])rotate([0,0,0])import("driverholder.stl"); 
     //filament guide without extra mount tab
     %color("purple")translate([18.5,-28+5.5,plate_thickness])rotate([0,0,0])import("extruder guide2.stl"); 
-    //%color("yellow")translate([0,0,0])rotate([0,180,0])import("x_carriage.stl");
+    %color("yellow")translate([0,0,0])rotate([0,180,0])import("x_carriage.stl");
     /*
         E3d fan duct for reference, comment out TWO of them to leave the one you want
     */
