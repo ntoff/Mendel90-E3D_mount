@@ -103,12 +103,12 @@ module baseplate(){
         translate([25,0,-1])cylinder(d=5,h=plate_thickness);
         //end mounting holes
             
-        translate([18.5,-28+5.5,-0.5])cylinder(d=5,h=6); //guide mount hole
-        translate([18.5,-28+5.5,-0.5])cylinder(d1=9,d2=5,h=3); //guide mount hole
+        translate([18.5,-28+5.5,1])cylinder(d=5,h=plate_thickness); //guide mount hole
+        translate([18.5,-28+5.5,-0.1])cylinder(d1=9,d2=5,h=3); //guide mount hole countersink
         translate([-35.7,-26.25,1])cylinder(d=5,h=plate_thickness); //motor 90 degree bracket mount hole
         translate([-35.7,26.25,1])cylinder(d=5,h=plate_thickness); //motor 90 degree bracket mount hole
-        translate([-35.7,-26.25,-0.1])cylinder(d1=9,d2=5,h=3); //motor 90 degree bracket mount hole
-        translate([-35.7,26.25,-0.1])cylinder(d1=9,d2=5,h=3); //motor 90 degree bracket mount hole
+        translate([-35.7,-26.25,-0.1])cylinder(d1=9,d2=5,h=3); //motor 90 degree bracket mount hole countersink
+        translate([-35.7,26.25,-0.1])cylinder(d1=9,d2=5,h=3); //motor 90 degree bracket mount hole countersink
         
         translate([0,5,+plate_thickness/2])cylinder(d=filament_hole_size,h=plate_thickness+0.5,center=true,$fn=32); //filament hole
         translate([0,0,-3])e3d();
